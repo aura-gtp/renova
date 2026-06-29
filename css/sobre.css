@@ -1,0 +1,301 @@
+/* ========================================
+   RENOVA — Sobre Page Styles
+   ======================================== */
+
+/* === ABOUT INTRO === */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.about-intro__content {
+  max-width: 560px;
+}
+
+.about-intro__text {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+.about-intro__text strong {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+.about-intro__image {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* === MISSION & VISION === */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+}
+
+.mv-card {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.mv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.mv-card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.15);
+  border-radius: var(--radius-lg);
+  color: var(--color-glow);
+}
+
+.mv-card__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.mv-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: #fff;
+  margin-bottom: var(--space-4);
+}
+
+.mv-card__text {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: var(--leading-relaxed);
+}
+
+/* === PILLARS === */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pillars__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.pillar {
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.pillar:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-accent);
+}
+
+.pillar__icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-glow);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+}
+
+.pillar__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.pillar__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.pillar__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.pillars__base {
+  width: 100%;
+  padding: var(--space-6);
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.pillars__base::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid var(--color-primary);
+}
+
+.pillars__base-title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-2);
+}
+
+.pillars__base-text {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* === AREAS === */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.area-tag {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  transition: all var(--transition-fast);
+}
+
+.area-tag:hover {
+  border-color: var(--color-accent);
+  background: var(--gradient-glow);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.area-tag svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* === SCOPE / TECHNICAL === */
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.scope-item {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.scope-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.scope-item__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-glow);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+}
+
+.scope-item__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.scope-item__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.scope-item__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 767px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .about-intro__image {
+    height: 280px;
+    order: -1;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillars__columns {
+    grid-template-columns: 1fr;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scope-grid {
+    grid-template-columns: 1fr;
+  }
+}

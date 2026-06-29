@@ -1,0 +1,238 @@
+/* ========================================
+   RENOVA — Responsive Styles (Mobile-First)
+   ======================================== */
+
+/* === MOBILE (default, < 480px) === */
+
+/* Header Mobile */
+.header__nav {
+  display: flex;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: auto;
+  background: rgba(227, 228, 231, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-8) var(--space-8);
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  
+  /* Slide e fade transition */
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform var(--transition-base), opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.header__nav.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__nav .header__link {
+  font-size: var(--text-lg);
+  padding: var(--space-2) var(--space-8);
+  color: #111;
+  width: 100%;
+  text-align: center;
+}
+
+.header__nav .header__link:hover,
+.header__nav .header__link.active {
+  color: #000;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.header__nav .header__cta {
+  margin-left: 0;
+  margin-top: var(--space-4);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header__menu-btn {
+  display: flex;
+}
+
+/* Footer Mobile */
+.footer__grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.footer__bottom {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* WhatsApp Float - compact on mobile */
+.whatsapp-float span {
+  display: none;
+}
+
+.whatsapp-float {
+  padding: var(--space-4);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+}
+
+/* Page Hero compact */
+.page-hero {
+  padding: calc(80px + var(--space-10)) 0 var(--space-10);
+}
+
+/* Cards Grid */
+.grid--3,
+.grid--4 {
+  grid-template-columns: 1fr;
+}
+
+.grid--2 {
+  grid-template-columns: 1fr;
+}
+
+
+/* === SM (480px+) === */
+@media (min-width: 480px) {
+  .grid--2,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* === MD (768px+) === */
+@media (min-width: 768px) {
+  /* WhatsApp with text */
+  .whatsapp-float span {
+    display: inline;
+  }
+
+  .whatsapp-float {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    width: auto;
+    height: auto;
+  }
+
+  /* Grid */
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* === LG (1024px+) === */
+@media (min-width: 1024px) {
+  /* Header Desktop */
+  .header__nav {
+    display: flex;
+    position: static;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    flex-direction: row;
+    padding: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border-bottom: none;
+    transition: none;
+  }
+
+  .header__nav .header__link {
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-4);
+    width: auto;
+    text-align: left;
+  }
+
+  .header__nav .header__cta {
+    margin-left: var(--space-4);
+    margin-top: 0;
+    width: auto;
+    display: block;
+  }
+
+  .header__menu-btn {
+    display: none;
+  }
+
+  /* Grid */
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+
+/* === XL (1280px+) === */
+@media (min-width: 1280px) {
+  .section--lg {
+    padding: var(--space-32) 0;
+  }
+}
+
+
+/* === 2XL (1536px+) === */
+@media (min-width: 1536px) {
+  :root {
+    --container-max: 1400px;
+  }
+}
+
+
+/* === PRINT === */
+@media print {
+  .header,
+  .whatsapp-float,
+  .footer__social,
+  .header__menu-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .section--dark {
+    background: #f5f5f5 !important;
+    color: #000 !important;
+  }
+}

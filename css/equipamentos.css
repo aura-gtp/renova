@@ -1,0 +1,169 @@
+/* ========================================
+   RENOVA — Equipamentos Page Styles
+   ======================================== */
+
+/* === EQUIPMENT GRID === */
+.equipamentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+/* === EQUIPMENT CARD === */
+.equip-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.equip-card .card__image {
+  height: 240px;
+  object-fit: cover;
+}
+
+.equip-card .card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-6);
+}
+
+.equip-card .card__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-tight);
+}
+
+.equip-card .card__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-6);
+  flex: 1;
+}
+
+.equip-card .btn {
+  margin-top: auto;
+}
+
+/* Card number badge */
+.equip-card .card__image-wrapper {
+  position: relative;
+}
+
+.equip-card .card__image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.equip-card:hover .card__image-wrapper::before {
+  opacity: 1;
+}
+
+/* === CTA SECTION === */
+.equip-cta {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.equip-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.equip-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.equip-cta__content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.equip-cta__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+  color: #fff;
+  margin-bottom: var(--space-4);
+}
+
+.equip-cta__text {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
+}
+
+.equip-cta__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 479px) {
+  .equipamentos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equip-cta__buttons {
+    flex-direction: column;
+  }
+
+  .equip-cta__buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .equipamentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .equipamentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .equipamentos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .equipamentos-grid {
+    gap: var(--space-8);
+  }
+}
